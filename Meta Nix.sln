@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBSync", "DBSync\DBSync.csp
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MetaDB", "MetaDB\MetaDB.sqlproj", "{217E8028-FDF2-451B-82D9-3FAAD5B81114}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxSync", "MaxSync\MaxSync.csproj", "{AFD5D42C-E89B-4900-86C5-3036E3CB074C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxSync", "MaxSync\MaxSync.csproj", "{AFD5D42C-E89B-4900-86C5-3036E3CB074C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nix Tests", "Nix Tests", "{89963646-6F44-4D6F-9855-C7E8C63DFBC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxSyncTest", "MaxSyncTest\MaxSyncTest.csproj", "{AFA36CC6-DDDC-4291-9B2B-748CB4C1899C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,9 +33,16 @@ Global
 		{AFD5D42C-E89B-4900-86C5-3036E3CB074C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFD5D42C-E89B-4900-86C5-3036E3CB074C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFD5D42C-E89B-4900-86C5-3036E3CB074C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA36CC6-DDDC-4291-9B2B-748CB4C1899C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA36CC6-DDDC-4291-9B2B-748CB4C1899C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA36CC6-DDDC-4291-9B2B-748CB4C1899C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA36CC6-DDDC-4291-9B2B-748CB4C1899C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AFA36CC6-DDDC-4291-9B2B-748CB4C1899C} = {89963646-6F44-4D6F-9855-C7E8C63DFBC2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EEEB8389-BD14-4568-850F-F907CAAAC1E0}

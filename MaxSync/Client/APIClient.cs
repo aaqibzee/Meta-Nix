@@ -5,14 +5,14 @@ namespace MaxSync.Client
 {
     internal class APIClient : IAPIClient
     {
-        private readonly IConfiguration _configuration;
-        private string _apiUserName;
-        private string _apiPassword;
+        private readonly IConfiguration configuration;
+        private string apiUserName;
+        private string apiPassword;
         public APIClient(IConfiguration configuration)
         {
-            _configuration = configuration;
-            _apiUserName = _configuration["Secrets:StageAPIUserName"];
-            _apiPassword = _configuration["Secrets:StageAPIPassword"];
+            this.configuration = configuration;
+            apiUserName = this.configuration["Secrets:StageAPIUserName"];
+            apiPassword = this.configuration["Secrets:StageAPIPassword"];
 
         }
         public string GetAPIResponse(string address)
@@ -26,7 +26,7 @@ namespace MaxSync.Client
         }
         private string GetCredentials()
         {
-            return Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(_apiUserName+":"+_apiPassword));
+            return Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(apiUserName+":"+apiPassword));
         }
     }
 
