@@ -1,27 +1,27 @@
 ﻿using MaxSync.Client;
 using MaxSync.DTOs.Response;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
+using Microsoft.Extensions.Configuration;
 
 namespace MaxSync.DataProviders
 {
     public class AdvertiserDataProvider : IAdvertiserDataProvider
     {
-
-        string advertiserIndexesUrl = @"";
-        private APIClient _apiClient;
-        public AdvertiserDataProvider()
+        private readonly IConfiguration configuration;
+        private string advertiserIndexesUrl;
+        private IAPIClient apiClient;
+        public AdvertiserDataProvider(IConfiguration configuration, IAPIClient client)
         {
-            _apiClient = new APIClient();
+            this.configuration = configuration;
+            apiClient = client;
+            advertiserIndexesUrl = this.configuration["APIUrls:StageUrl"];
         }
+
         public void GetAdvertisersIndexes()
         {
-            var response = DeserializeData(_apiClient.GetAPIResponse(advertiserIndexesUrl));
+            var response = apiClient.GetAPIResponse(advertiserIndexesUrl);
+            var advertiserIndexes = DeserializeData(response);
         }
 
 
