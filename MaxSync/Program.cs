@@ -4,15 +4,16 @@ using Microsoft.Extensions.Configuration;
 using Meta_Nix.Models;
 using MaxSync;
 using MaxSync.DataProviders;
-using Microsoft.Extensions.Hosting;
 using MaxSync.Client;
 {
     {
         IServiceCollection services = new ServiceCollection();
+
         var config = GetConfiguration();
         var servieProvider = ConfigureService(config);
-        var handler = servieProvider.GetService<SyncHandler>();
-        handler.GetAdvertiserIndexData();
+        var syncHandler = servieProvider.GetService<ISyncHandler>();
+
+        syncHandler.GetAdvertiserIndexData();
     }
 
     IConfigurationRoot GetConfiguration()
@@ -55,7 +56,7 @@ using MaxSync.Client;
         services.AddSingleton<IConfiguration>(configuration);
         services.AddScoped<IAdvertiserDataProvider, AdvertiserDataProvider>();
         services.AddScoped<IAPIClient, APIClient>();
-        services.AddScoped<SyncHandler, SyncHandler>();
+        services.AddScoped<ISyncHandler, SyncHandler>();
     }
 
 }

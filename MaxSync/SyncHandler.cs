@@ -1,6 +1,8 @@
-﻿namespace MaxSync
+﻿using MaxSync.DataProviders;
+
+namespace MaxSync
 {
-    public class SyncHandler
+    public class SyncHandler: ISyncHandler
     {
         private IAdvertiserDataProvider _advertiserDataProvider;
         public SyncHandler(IAdvertiserDataProvider someInterface)
@@ -14,8 +16,8 @@
         }
     }
 
-    public interface IAdvertiserDataProvider
+    public interface ISyncHandler
     {
-        void GetAdvertisersIndexes();
+        void GetAdvertiserIndexData();
     }
 }

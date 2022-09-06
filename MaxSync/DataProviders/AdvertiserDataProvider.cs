@@ -36,6 +36,9 @@ namespace MaxSync.DataProviders
             advertisersContentIndex deserializedEmployee = (advertisersContentIndex)employeeData;
             return deserializedEmployee;
         }
-
+    }
+    public interface IAdvertiserDataProvider
+    {
+        void GetAdvertisersIndexes();
     }
 }
