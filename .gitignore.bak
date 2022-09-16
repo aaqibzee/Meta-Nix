@@ -363,5 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Ignore specific files
-/MaxSync/appsettings.json
-/DBSync/appsettings.Development.json
+DBSync/appsettings.Development.json
+MaxSync/appsettings.Default.json

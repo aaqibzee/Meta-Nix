@@ -1,12 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-Meta_Nix-408A4395-4DEC-4D4E-B61C-7CAA4844475F</UserSecretsId>
     <RootNamespace>Meta_Nix</RootNamespace>
-    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
